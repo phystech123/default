@@ -33,6 +33,14 @@ class Hu:
         self.ball_id = canvas.create_image(self.x,self.y, image=phot[randint(0,len(phot)-1)])
 
     def move(self):
+        if self.dx>0:
+            self.dx+=0.1
+        else:
+            self.dx-=0.1
+        if self.dy>0:
+            self.dy+=0.1
+        else:
+            self.dy-=0.1
         self.x += self.dx
         self.y += self.dy
         if self.x + 50 > WIDTH or self.x <= 0: 
