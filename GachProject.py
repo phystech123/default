@@ -72,6 +72,17 @@ class HUY:
         canvas.move(self.ball_id, self.dx, self.dy)
 
 
+class Infa:
+    def __init__(self,event):
+        self.x = 600
+        self.y = 300
+        self.dx, self.dy = (10, 10) 
+        self.ball_id = canvas.create_image(self.x,self.y, image=photog)
+
+    def show(self):
+        canvas.move(self.ball_id, self.dx, self.dy)
+
+
 hu=[]
 def click_handler(event):
     hu.append(Hu(event))
@@ -79,6 +90,10 @@ def click_handler(event):
 ho=[]
 def click_r(event):
     ho.append(HUY(event))
+
+go=[]
+def click_e(event):
+    go.append(Infa(event))
 
 def tick():
     for ball in balls:
@@ -90,6 +105,9 @@ def tick():
     for huy in ho:
         huy.move()
         huy.show()
+    for t in go:
+        t.move()
+        t.show()
     root.after(50, tick)
 
 
@@ -101,9 +119,11 @@ photo=PhotoImage(file='ovch.png').subsample(3, 3)
 phot=[PhotoImage(file='h.png').subsample(10, 10),
        PhotoImage(file='man.png').subsample(10, 10),
        PhotoImage(file='dick1.png').subsample(10, 10)]
+photog=PhotoImage(file='infop.png').zoom(2,1)
 pho=PhotoImage(file='kk.png').zoom(2,2)
 canvas.bind('<Button-3>',click_r)
 canvas.bind('<Button-1>', click_handler)
+canvas.bind('<Double-Button-1>',click_e)
 balls = [Ball()]
 tick()
 root.mainloop()
