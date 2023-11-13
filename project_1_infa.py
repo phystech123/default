@@ -11,7 +11,7 @@ class MATAN:
         self.x = 0
         self.y = 10
         self.dx, self.dy = 10, 8 
-        self.id = canvas.create_image(WIDTH/6, HEIGHT/6,image=photo) 
+        self.id = canvas.create_image(WIDTH/6, HEIGHT/6,image=photomain) 
 
     def move(self):
         self.x += self.dx
@@ -61,7 +61,7 @@ class heart:
         self.x = event.x
         self.y = event.y
         self.dx, self.dy = randint(-10, 10), randint(-10, 10) 
-        self.id = canvas.create_image(self.x,self.y, image=phot[randint(0,len(phot)-1)])
+        self.id = canvas.create_image(self.x,self.y, image=photolist[randint(0,len(photolist)-5)])
 
     def move(self):
         if self.dx>0:
@@ -86,18 +86,18 @@ class prise:
     def __init__(self,event):
         self.x = 600
         self.y = 300
-        self.id = canvas.create_image(self.x,self.y, image=pho)
+        self.id = canvas.create_image(self.x,self.y, image=photobruh)
 
     def show(self):
         canvas.move(self.id)
 
-class Infa:
+class Pop:
     def __init__(self,event):
         self.x = 600
         self.y = 300
         self.dx=0
         self.dy=0
-        self.id = canvas.create_image(self.x,self.y, image=photog)
+        self.id = canvas.create_image(self.x,self.y, image=photodouble)
 
     def move(self):
         self.x+=self.dx
@@ -137,7 +137,7 @@ if __name__=='__main__':
 
     list4=[]
     def cl_Infa(event):
-        list4.append(Infa(event))
+        list4.append(Pop(event))
 #.........................
     class time: #performer
         def __init__(self):
@@ -214,12 +214,22 @@ if __name__=='__main__':
             tex.show()
         root.after(50, tick)
 #photo
-    photo=PhotoImage(file='ovch.png').subsample(3, 3)
-    phot=[PhotoImage(file='h.png').subsample(10, 10),
-        PhotoImage(file='man.png').subsample(10, 10),
-        PhotoImage(file='dick1.png').subsample(10, 10)]
-    photog=PhotoImage(file='infop.png').zoom(2,1)
-    pho=PhotoImage(file='kk.png').zoom(2,2)
+    photomain=PhotoImage(file='pict1.png').subsample(3, 3)
+    photolist=[
+        PhotoImage(file='pict6.png').subsample(15, 15),
+        PhotoImage(file='pict7.png').subsample(5, 5),
+        PhotoImage(file='pict8.png').subsample(6, 6),
+        PhotoImage(file='pict9.png').subsample(3, 3),
+        PhotoImage(file='pict10.png').subsample(3, 3),
+        PhotoImage(file='pict11.png').subsample(3, 3),
+        PhotoImage(file='pict12.png').subsample(2, 2),
+        PhotoImage(file='pict2.png').subsample(10, 10),
+        PhotoImage(file='pict3.png').subsample(10, 10),
+        PhotoImage(file='pict4.png').subsample(10, 10),
+        PhotoImage(file='pict5.png').subsample(10, 10)
+        ]
+    photodouble=PhotoImage(file='pict13.png').zoom(2,1)
+    photobruh=PhotoImage(file='pict14.png').zoom(4,4)
 #main photo put
     list0 = [MATAN()]
     tex=text()

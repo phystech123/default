@@ -1,129 +1,137 @@
-from tkinter import *
-from random import randint
+# from tkinter import *
+# from random import randint
 
-WIDTH = 1200
-HEIGHT = 600
-# color=['green','red','pink','black','brown','purple','yellow']
-# pol=['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw', 'center']
-class Ball:
-    def __init__(self):
-        self.x = 10
-        self.y = 0
-        self.dx, self.dy = (10, 10) 
-        self.ball_id = canvas.create_image(WIDTH/6, HEIGHT/6,image=photo) 
+# WIDTH = 1200
+# HEIGHT = 600
+# # color=['green','red','pink','black','brown','purple','yellow']
+# # pol=['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw', 'center']
+# class Ball:
+#     def __init__(self):
+#         self.x = 10
+#         self.y = 0
+#         self.dx, self.dy = (10, 10) 
+#         self.ball_id = canvas.create_image(WIDTH/6, HEIGHT/6,image=photo) 
 
-    def move(self):
-        self.x += self.dx
-        self.y += self.dy
-        if self.x + 400 > WIDTH or self.x < 0: 
-            self.dx = -self.dx
-        if self.y +200 > HEIGHT or self.y-10 < 0:
-            self.dy = -self.dy
-            self.ball_id
+#     def move(self):
+#         self.x += self.dx
+#         self.y += self.dy
+#         if self.x + 400 > WIDTH or self.x < 0: 
+#             self.dx = -self.dx
+#         if self.y +200 > HEIGHT or self.y-10 < 0:
+#             self.dy = -self.dy
+#             self.ball_id
 
-    def show(self):
-        canvas.move(self.ball_id, self.dx, self.dy)
-
-
-class Hu:
-    def __init__(self,event):
-        self.x = event.x
-        self.y = event.y
-        self.dx, self.dy = (10, 10) 
-        self.ball_id = canvas.create_image(self.x,self.y, image=phot[randint(0,len(phot)-1)])
-
-    def move(self):
-        if self.dx>0:
-            self.dx+=0.1
-        else:
-            self.dx-=0.1
-        if self.dy>0:
-            self.dy+=0.1
-        else:
-            self.dy-=0.1
-        self.x += self.dx
-        self.y += self.dy
-        if self.x + 50 > WIDTH or self.x <= 0: 
-            self.dx = -self.dx
-        if self.y + 50 > HEIGHT or self.y <= 0:
-            self.dy = -self.dy
-            self.ball_id
-
-    def show(self):
-        canvas.move(self.ball_id, self.dx, self.dy)
-
-class HUY:
-    def __init__(self,event):
-        self.x = 600
-        self.y = 300
-        self.dx, self.dy = (10, 10) 
-        self.ball_id = canvas.create_image(self.x,self.y, image=pho)
-
-    # def move(self):
-    #     self.x += self.dx
-    #     self.y += self.dy
-    #     if self.x + 50 > WIDTH or self.x <= 0: 
-    #         self.dx = -self.dx
-    #     if self.y + 50 > HEIGHT or self.y <= 0:
-    #         self.dy = -self.dy
-    #         self.ball_id
-
-    def show(self):
-        canvas.move(self.ball_id, self.dx, self.dy)
+#     def show(self):
+#         canvas.move(self.ball_id, self.dx, self.dy)
 
 
-class Infa:
-    def __init__(self,event):
-        self.x = 600
-        self.y = 300
-        self.dx, self.dy = (10, 10) 
-        self.ball_id = canvas.create_image(self.x,self.y, image=photog)
+# class Hu:
+#     def __init__(self,event):
+#         self.x = event.x
+#         self.y = event.y
+#         self.dx, self.dy = (10, 10) 
+#         self.ball_id = canvas.create_image(self.x,self.y, image=phot[randint(0,len(phot)-1)])
 
-    def show(self):
-        canvas.move(self.ball_id, self.dx, self.dy)
+#     def move(self):
+#         if self.dx>0:
+#             self.dx+=0.1
+#         else:
+#             self.dx-=0.1
+#         if self.dy>0:
+#             self.dy+=0.1
+#         else:
+#             self.dy-=0.1
+#         self.x += self.dx
+#         self.y += self.dy
+#         if self.x + 50 > WIDTH or self.x <= 0: 
+#             self.dx = -self.dx
+#         if self.y + 50 > HEIGHT or self.y <= 0:
+#             self.dy = -self.dy
+#             self.ball_id
+
+#     def show(self):
+#         canvas.move(self.ball_id, self.dx, self.dy)
+
+# class HUY:
+#     def __init__(self,event):
+#         self.x = 600
+#         self.y = 300
+#         self.dx, self.dy = (10, 10) 
+#         self.ball_id = canvas.create_image(self.x,self.y, image=pho)
+
+#     # def move(self):
+#     #     self.x += self.dx
+#     #     self.y += self.dy
+#     #     if self.x + 50 > WIDTH or self.x <= 0: 
+#     #         self.dx = -self.dx
+#     #     if self.y + 50 > HEIGHT or self.y <= 0:
+#     #         self.dy = -self.dy
+#     #         self.ball_id
+
+#     def show(self):
+#         canvas.move(self.ball_id, self.dx, self.dy)
 
 
-hu=[]
-def click_handler(event):
-    hu.append(Hu(event))
+# class Infa:
+#     def __init__(self,event):
+#         self.x = 600
+#         self.y = 300
+#         self.dx, self.dy = (10, 10) 
+#         self.ball_id = canvas.create_image(self.x,self.y, image=photog)
 
-ho=[]
-def click_r(event):
-    ho.append(HUY(event))
-
-go=[]
-def click_e(event):
-    go.append(Infa(event))
-
-def tick():
-    for ball in balls:
-        ball.move()
-        ball.show()
-    for hurt in hu:
-        hurt.move()
-        hurt.show()
-    for huy in ho:
-        huy.move()
-        huy.show()
-    for t in go:
-        t.move()
-        t.show()
-    root.after(50, tick)
+#     def show(self):
+#         canvas.move(self.ball_id, self.dx, self.dy)
 
 
-root = Tk()
-root.geometry(f'{WIDTH}x{HEIGHT}')
-canvas = Canvas(root,width=WIDTH, height=HEIGHT)
-canvas.pack(anchor=CENTER)
-photo=PhotoImage(file='ovch.png').subsample(3, 3)
-phot=[PhotoImage(file='h.png').subsample(10, 10),
-       PhotoImage(file='man.png').subsample(10, 10),
-       PhotoImage(file='dick1.png').subsample(10, 10)]
-photog=PhotoImage(file='infop.png').zoom(2,1)
-pho=PhotoImage(file='kk.png').zoom(2,2)
-canvas.bind('<Button-3>',click_r)
-canvas.bind('<Button-1>', click_handler)
-canvas.bind('<Double-Button-1>',click_e)
-balls = [Ball()]
-tick()
-root.mainloop()
+# hu=[]
+# def click_handler(event):
+#     hu.append(Hu(event))
+
+# ho=[]
+# def click_r(event):
+#     ho.append(HUY(event))
+
+# go=[]
+# def click_e(event):
+#     go.append(Infa(event))
+
+# def tick():
+#     for ball in balls:
+#         ball.move()
+#         ball.show()
+#     for hurt in hu:
+#         hurt.move()
+#         hurt.show()
+#     for huy in ho:
+#         huy.move()
+#         huy.show()
+#     for t in go:
+#         t.move()
+#         t.show()
+#     root.after(50, tick)
+
+
+# root = Tk()
+# root.geometry(f'{WIDTH}x{HEIGHT}')
+# canvas = Canvas(root,width=WIDTH, height=HEIGHT)
+# canvas.pack(anchor=CENTER)
+# photo=PhotoImage(file='ovch.png').subsample(3, 3)
+# phot=[PhotoImage(file='h.png').subsample(10, 10),
+#        PhotoImage(file='man.png').subsample(10, 10),
+#        PhotoImage(file='dick1.png').subsample(10, 10)]
+# photog=PhotoImage(file='infop.png').zoom(2,1)
+# pho=PhotoImage(file='kk.png').zoom(2,2)
+# canvas.bind('<Button-3>',click_r)
+# canvas.bind('<Button-1>', click_handler)
+# canvas.bind('<Double-Button-1>',click_e)
+# balls = [Ball()]
+# tick()
+# root.mainloop()
+
+
+s=[11,22,33,44,55,66,77,88,99,0]
+# with open('test.txt', 'a') as f:
+#     for i in s:
+#         f.write(str(i))
+with open('/oleg/simple/test.txt', 'r') as f:
+    print(f.read())
