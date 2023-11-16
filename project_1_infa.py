@@ -214,22 +214,22 @@ if __name__=='__main__':
             tex.show()
         root.after(50, tick)
 #photo
-    photomain=PhotoImage(file='pict1.png').subsample(3, 3)
+    photomain=PhotoImage(file='image1/pict1.png').subsample(3, 3)
     photolist=[
-        PhotoImage(file='pict6.png').subsample(15, 15),
-        PhotoImage(file='pict7.png').subsample(5, 5),
-        PhotoImage(file='pict8.png').subsample(6, 6),
-        PhotoImage(file='pict9.png').subsample(3, 3),
-        PhotoImage(file='pict10.png').subsample(3, 3),
-        PhotoImage(file='pict11.png').subsample(3, 3),
-        PhotoImage(file='pict12.png').subsample(2, 2),
-        PhotoImage(file='pict2.png').subsample(10, 10),
-        PhotoImage(file='pict3.png').subsample(10, 10),
-        PhotoImage(file='pict4.png').subsample(10, 10),
-        PhotoImage(file='pict5.png').subsample(10, 10)
+        PhotoImage(file='image1/pict6.png').subsample(15, 15),
+        PhotoImage(file='image1/pict7.png').subsample(5, 5),
+        PhotoImage(file='image1/pict8.png').subsample(6, 6),
+        PhotoImage(file='image1/pict9.png').subsample(3, 3),
+        PhotoImage(file='image1/pict10.png').subsample(3, 3),
+        PhotoImage(file='image1/pict11.png').subsample(3, 3),
+        PhotoImage(file='image1/pict12.png').subsample(2, 2),
+        PhotoImage(file='image1/pict2.png').subsample(10, 10),
+        PhotoImage(file='image1/pict3.png').subsample(10, 10),
+        PhotoImage(file='image1/pict4.png').subsample(10, 10),
+        PhotoImage(file='image1/pict5.png').subsample(10, 10)
         ]
-    photodouble=PhotoImage(file='pict13.png').zoom(2,1)
-    photobruh=PhotoImage(file='pict14.png').zoom(4,4)
+    photodouble=PhotoImage(file='image1/pict13.png').zoom(2,1)
+    photobruh=PhotoImage(file='image1/pict14.png').zoom(4,4)
 #main photo put
     list0 = [MATAN()]
     tex=text()
