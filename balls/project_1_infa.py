@@ -61,7 +61,7 @@ class heart:
         self.x = event.x
         self.y = event.y
         self.dx, self.dy = randint(-10, 10), randint(-10, 10) 
-        self.id = canvas.create_image(self.x,self.y, image=photolist[randint(0,len(photolist)-5)])
+        self.id = canvas.create_image(self.x,self.y, image=photolist[randint(0,len(photolist)-1)])
 
     def move(self):
         if self.dx>0:
@@ -189,6 +189,7 @@ if __name__=='__main__':
     Time=time()
 #Canvas, tkinter
     root = Tk()
+    root.config(cursor='heart')
     root.title(f'Проект по информатике.')
     root.geometry(f'{WIDTH}x{HEIGHT}')
     canvas = Canvas(root,width=WIDTH, height=HEIGHT)
