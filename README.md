@@ -1,2 +1,1 @@
-# infa_1sem
-ifa semenare
+It is average MIPT stusent`s repo
