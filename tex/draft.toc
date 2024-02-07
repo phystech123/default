@@ -1,0 +1,4 @@
+\babel@toc {russian}{}\relax 
+\contentsline {subsection}{\numberline {0.1}operators}{2}{}%
+\contentsline {section}{\numberline {1}2}{2}{}%
+\contentsline {section}{\numberline {A}ps}{2}{}%

@@ -1,3 +1,4 @@
+from os import path 
 from tkinter import *
 from random import randint
 from tkinter import ttk
@@ -215,7 +216,7 @@ if __name__=='__main__':
             tex.show()
         root.after(50, tick)
 #photo
-    photomain=PhotoImage(file='/image1/pict1.png').subsample(3, 3)
+    photomain=PhotoImage(file='image1/pict1.png').subsample(3, 3)
     photolist=[
         PhotoImage(file='image1/pict6.png').subsample(15, 15),
         PhotoImage(file='image1/pict7.png').subsample(5, 5),
