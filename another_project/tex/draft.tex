@@ -1,5 +1,7 @@
+\documentclass[a4paper, 12pt]{article}
+
 \input{preamble.tex}
-\begin{document}
+\begin{document} 
 
 \pagestyle{main}
 
@@ -21,6 +23,21 @@
 \tableofcontents
 \newpage
 
+
+\begin{table}[h]
+    \begin{tabular}{||c|c|c|c||}
+        \hline
+        1&2&3&4\\
+        \cline{1-2}
+        \cline{1-4} 
+        $\backslash$&$\phi$&$\kappa$&3\\
+        \hline
+        \label{first} 
+    \end{tabular}
+\caption{первая таблица}
+\end{table}
+
+\thetable
 
 
 
@@ -75,16 +92,108 @@ text \hspace*{10pt} text
 
 
 \newpage
+gfdddrtdrdrdrtdr
+
+\vspace{20pt}
+
+\section{123}
+\begin{table}[h]
 \begin{tabular}{||c|c|c|c||}
+    \hline
     1&2&3&4\\
     \cline{1-2}
     \cline{1-4} 
     $\backslash$&$\phi$&$\kappa$&3\\
-\end{tabular}
+    \hline
+    \label{second}
+    \end{tabular}
+    \caption{вторая таблица}
+\end{table}
 
 \includegraphics[width=30mm]{/home/oleg/Pictures/MIPT.png}
 
 \newpage
-text
+
+\framebox{\colorbox{red}{\rotatebox{30}{\scalebox{3}{проверено электроникой}}}}
+
 \textrm{text}
+
+
+% \begin{tikzpicture}
+% \draw (0,0) circle(100pt);
+% \draw [xstep=0.5, ystep=0.4](0,)grid(2,2);
+% \end{tikzpicture}
+
+
+% \newpage
+
+% \listoftables
+
+% \listoffigures
+
+% \newpage %графики в LaTex
+
+% \begin{figure}[h]
+%     \centering
+% \begin{tikzpicture}
+% 	\begin{axis}
+% 		\addplot[color=red]{exp(x)};
+%         \addplot[color=blue]{2*exp(x)};
+% 	\end{axis}
+% \end{tikzpicture}
+
+% % Код второго графика
+% \begin{tikzpicture}
+% 	\begin{axis}
+% 		\addplot3[surf] {exp(-x^2-y^2)*x};
+% 	\end{axis}
+% \end{tikzpicture}
+% \begin{tikzpicture}
+% 	\begin{axis}
+% 		\addplot[color=red, domain=0:1, samples=300]{2*(x^2)};
+% 		\addplot[color=red, domain=1:4, samples=300]{2*x};
+% 	\end{axis}
+% \end{tikzpicture}
+% \begin{tikzpicture}
+% 	\begin{axis}
+% 		\addplot[color=red, domain=-1:1, samples=700]{sqrt(1-x^2)};
+% 		\addplot[color=red, domain=-1:1, samples=700]{-sqrt(1-x^2)};
+% 	\end{axis}
+% \end{tikzpicture}
+% \begin{tikzpicture}
+%     \begin{axis}[
+%         axis lines = middle, % привычные оси со стрелочками с пересечением в нуле
+%         % возможные значения: box, left, middle, center, right, none
+%         xlabel = {$x$}, % подпись оси x
+%         ylabel = {$f(x)$}, % подпись оси y
+%         title={Мой первый график $f(x)=x^2 - 2\cdot x - 1$}, 
+%     ]
+%         \addplot[domain=-10:10, samples=100, color=red] {x^2 - 2*x - 1};
+%     \end{axis}
+%     \end{tikzpicture}
+% \end{figure}
+
+\newpage
+\begin{figure}
+\begin{tikzpicture}
+    \begin{axis}[
+        xtick={0, 500, 1000, 2000, 3000},
+        xticklabels={0,500,1000,2000,3000},
+    ]
+        \addplot +[
+	mark=*, 
+	only marks,
+] plot[
+	error bars/.cd,
+	y dir=both,
+	y explicit relative,
+] table [		    	    	    	
+	x=Fr, 
+	y=Uin,
+	y error=err,
+]{data.tsv};
+    \end{axis}
+\end{tikzpicture}
+\caption[1]{my first plot on latex}
+\end{figure} 
 \end{document} 

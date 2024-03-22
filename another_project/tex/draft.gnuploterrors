@@ -1,0 +1,5 @@
+
+set terminal latex
+             ^
+"./draft-gnuplottex-fig1.gnuplot" line 1: unknown or ambiguous terminal type; type just 'set terminal' for a list
+

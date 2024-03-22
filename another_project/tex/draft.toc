@@ -1,4 +1,5 @@
 \babel@toc {russian}{}\relax 
-\contentsline {subsection}{\numberline {0.1}operators}{2}{}%
-\contentsline {section}{\numberline {1}2}{2}{}%
-\contentsline {section}{\numberline {A}ps}{2}{}%
+\contentsline {subsection}{\numberline {0.1}operators}{2}{subsection.0.1}%
+\contentsline {section}{\numberline {1}2}{2}{section.1}%
+\contentsline {section}{\numberline {A}ps}{2}{appendix.A}%
+\contentsline {section}{\numberline {B}123}{3}{appendix.B}%
