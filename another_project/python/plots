@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
-
-plt.plot(x,y)
+import numpy as np
+x = np.linspace(0, 10, 100)
+plt.plot(x, x**2)
 plt.show()
