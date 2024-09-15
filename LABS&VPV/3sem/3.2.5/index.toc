@@ -1,0 +1,12 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Введение}{3}{section.1}%
+\contentsline {section}{\numberline {2}Установка}{3}{section.2}%
+\contentsline {section}{\numberline {3}Цели}{4}{section.3}%
+\contentsline {section}{\numberline {4}Ход работы}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Нулевая емкость}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Определение зависимости периода свободных колебаний контура от емкости}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Определение зависимости логарифмического декремента затухания от сопротивления}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Определение критического сопротивления контура}{7}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}$T_{th} vs T_{pr}$}{7}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}$1/\Theta ^2$ от $1/R^2$}{8}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Вывод}{8}{section.5}%
