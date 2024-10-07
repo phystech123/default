@@ -1,0 +1,8 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Введение}{3}{section.1}%
+\contentsline {section}{\numberline {2}Схема установки}{3}{section.2}%
+\contentsline {section}{\numberline {3}Теория}{3}{section.3}%
+\contentsline {section}{\numberline {4}Ход работы}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Таблицы и графики}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Расчеты}{11}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Вывод}{11}{section.5}%
