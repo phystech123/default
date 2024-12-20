@@ -1,0 +1,156 @@
+\documentclass{article}
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 9.4in}]{geometry}
+
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{mathtext}
+\usepackage{amsmath}
+\usepackage{siunitx} % Required for alignment
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{caption}
+\usepackage{physics}
+
+\graphicspath{{pictures/}}
+
+\title{\begin{center}Лабораторная работа №3.4.2\end{center}
+Закон Кюри-Вейсса}
+\author{Балушкин Петр Б04-302}
+\date{\today}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\pagenumbering{arabic}
+
+\textbf{Цель работы:} изучение температурной зависимости магнитной восприимчивости ферромагнетика выше точки Кюри.
+
+\textbf{В работе используются:} катушка самоиндукции с образцом из гадолиния, термостат, частометр, цифровой вольтметр, $ LC $-автогенератор, термопара медь-константин.
+
+\section{Теоретическая часть}
+\paragraph{Модель среднего поля.}
+В качестве простейшей эмпирические модели, описывающей магнитную восприимчивость 
+ферромагнетика, можно рассмотреть следующую модель: Пусть намагниченность среды 
+пропорциональна некоторому эффективному полю $\vb* H_{эфф}$, складывающемуся из поля
+$\vb* H$ в данной точке, созданного сторонними токами, и среднего "коллективного" 
+поля, пропорционального величине намагниченности $\vb* M$
+\begin{equation*}
+    \vb* M = \chi_{пар}\vb* H_{эфф} \\
+\end{equation*}
+\begin{equation*}
+    \chi_{пар} \propto 1/T \\
+\end{equation*}
+\begin{equation*}
+    \vb* H_{эфф} = \vb* H + \beta \vb* M
+\end{equation*}
+Отсюда можно получить закон Кюри-Вейсса
+\begin{equation}
+    \label{Curie-Weiss}
+    \chi = \frac{1}{\chi^{-1}_{пар} - \beta} \propto \frac{1}{T - \Theta}
+\end{equation}
+
+\section{Установка}
+
+\begin{figure}[h]
+    \center{\includegraphics[scale=0.4]{ustanovka}}
+    \caption{Установка для определения коэффициента вязкости жидкости.}
+    \label{ustanovka}
+    \newpage
+\end{figure}
+
+
+Установка измеряет температуру образца и собственный период колебания $LC$ контура, 
+где $C$ находится в автогенераторе, а в качестве $L$ выступает катушка с гадолиниевым 
+сердечником. Обозначим $L_0$ индуктивность катушки без сердечника. Тогда
+\begin{equation*}
+    L - L_0 \propto \mu - 1 = \chi
+\end{equation*}
+Так же мы знаем что
+\begin{align*}
+    \tau_0 &= 2\pi\sqrt{L_0C} \\
+    \tau &= 2\pi\sqrt{LC} \\
+\end{align*}
+Подставляя уравнения и воспользовавшись законом Кюри-Вейсса (\ref{Curie-Weiss}) полуаем
+\begin{equation}
+    \frac{1}{\chi} \propto \frac{1}{\tau^2 - \tau_0^2} \propto T - \Theta_p
+\end{equation}
+Измерения температуры проводим двумя частями. Термометр измеряет температуру воды в 
+термостате, а термопара измеряет разницу температур воды и масла в пробирке, в котором находится образец с катушкой. 
+
+\section{Измерения}
+Параметры установки
+\begin{equation*}
+    \tau_0 = (8.252 \pm 0.001) \mu с \mathrm{,}\quad \kappa = 24^\circ C/мВ
+\end{equation*}
+Температура масла в пробирке считается формулой
+\begin{equation*}
+    T = T_{вода} + \Delta T \quad \text{где} \quad \Delta T = \kappa U
+\end{equation*}
+
+\begin{table}[!h]
+\begin{center}
+    \begin{tabular}{rrrr}
+        \toprule
+        tтемп, C, x & τпреиод, мкс & τ0 & y \\
+        \midrule
+        14.350000 & 7.916000 & 6.872000 & 0.064772 \\
+        16.060000 & 7.880000 & 6.872000 & 0.067249 \\
+        18.070000 & 7.785000 & 6.872000 & 0.074728 \\
+        20.040000 & 7.648000 & 6.872000 & 0.088751 \\
+        22.000000 & 7.484000 & 6.872000 & 0.113819 \\
+        24.000000 & 7.270000 & 6.872000 & 0.177667 \\
+        26.000000 & 7.152000 & 6.872000 & 0.254665 \\
+        28.000000 & 7.100000 & 6.872000 & 0.313911 \\
+        30.000000 & 7.068000 & 6.872000 & 0.366000 \\
+        32.000000 & 7.047000 & 6.872000 & 0.410539 \\
+        34.000000 & 7.031000 & 6.872000 & 0.452371 \\
+        36.000000 & 7.020000 & 6.872000 & 0.486378 \\
+        38.000000 & 7.010000 & 6.872000 & 0.521998 \\
+        40.000000 & 7.004000 & 6.872000 & 0.545961 \\
+        \bottomrule
+        \end{tabular}\end{center}
+\caption{Данные}
+\label{raw_data}
+\end{table}
+
+Ошибки сырых данных
+\begin{equation*}
+    \Delta T_{в} = 0.01 ^\circ C \mathrm{,}\quad
+    \Delta U = 1мВ \mathrm{,}\quad\Delta
+    P = 0.001 \mu c
+\end{equation*}
+После обработки данных получаем следующие значения, где $y=\frac{1}{\tau^2-\tau^2_0}$
+
+\newpage
+Построим график $y=y(T)$
+
+\begin{figure}[h]
+    \center{\includegraphics[width=0.85\textwidth]{data/data1}}
+    \caption{График зависимости $y=y(T)$}
+    \label{plot}
+\end{figure}
+
+Из графика получаем парамагнитную точку Кюри гадолиния
+$\Theta_p = (20 \pm 1) ^\circ C$. Так же из графика можем оценить ферромагнитную 
+точку Кюри $\Theta_{К} = (22 \pm 1) ^\circ C$
+
+\newpage
+\section{Выводы}
+Из опыта получили следующие данные
+\begin{equation}
+    \Theta_p = (20 \pm 0.9) ^\circ C \mathrm{,}\quad \Theta_{К} = (21 \pm 1) ^\circ C
+\end{equation}
+% Табличные значения этих данных
+% \begin{equation}
+%     \Theta_p^{таб} = (17.1 \pm 0.5) ^\circ C \mathrm{,}\quad
+%     \Theta_{К}^{таб} = 20.2 ^\circ C
+% \end{equation}
+% В пределах погрешности результаты совпадают с табличными значениями.
+
+\end{document}
