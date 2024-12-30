@@ -1,0 +1,194 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{./preamble.tex}
+
+\begin{document}
+
+\begin{titlepage}
+    \title{Контрольная работа\\
+    по аналитической механике(3 семестр).\\
+    Тема: вращение двух связанных пружиной шаров.
+    }
+    \author{Рябов Олег \\
+    Шистко Степан\\
+    Группа Б04-302}
+    \date{\today}
+    \maketitle
+    \vfill
+    \begin{center}
+        \includegraphics[width=30mm]{./pictures/MIPT.png}
+    \end{center}
+\end{titlepage}
+
+\setcounter{page}{2}
+\tableofcontents
+\newpage
+\section{Формулировка проблемы}
+В данной работе рассмотрено свободное движение пары шаров, связанных друг с другом невесомой пружиной. Метод рассмотрения: построение лагранжиана для данной системы, вывод уравнений движения и их численное интегрирование, нахождение первых интегралов.
+\section{Обобщенные координаты и параметры системы}
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=90, width = 120mm]{pictures/scheme.jpg}
+    \caption{Схема системы}
+\end{figure}
+Введены следующие обобщенные координаты:
+\begin{enumerate}
+    \item $x$ - координата центра масс по оси X
+    \item $y$ - координата центра масс по оси Y
+    \item $z$ - координата центра масс по оси Z
+    \item $l$ - длина пружины
+    \item $\psi$ - угол относительно плоскости XY
+    \item $\phi$ - угол в плоскости XY
+\end{enumerate}
+\newpage
+Система имеет следующие независимые параметры:
+\begin{enumerate}
+    \item $k$ - жесткость пружины
+    \item $l_0$ - длины пружины без напряжения
+    \item $m_1$ - масса первого шара
+    \item $m_2$ - масса второго шара
+\end{enumerate}
+Так же была введена вспомогательная велиина:
+\begin{enumerate}
+    \item $\mu = \frac{m_1\cdot m_2}{m_1+m_2}$
+    \end{enumerate}
+
+\section{Теория}
+ \subsection{Функция Лагранжа}
+    По определению
+    \[L = T - V\]
+    Поскольку тело свободное, то сил на него не действует, получаем уравнения Эйлера-Лагранжа вида:
+    \[\frac{d}{dt}\frac{\partial L}{\partial \dot{q_i}} = \frac{\partial L}{\partial q_i}\]
+ Лагранжиан имеет в себе кинетическую энергию поступательного движения центра масс, кинетическую энергию вращения шаров вокруг центра масс, кинетическую энергию радиального движения шаров и потенциальную энергию пружины.
+    \[L = \frac{1}{2}(\dot{x}^2+\dot{y}^2+\dot{z}^2) + \frac{1}{2}\mu l^2(\dot{\phi}^2{\cos^2{\psi}} + \dot{\psi}^2) + \frac{1}{2}\mu \dot{l}^2 - \frac{1}{2}k(l-l_0)^2\]
+    \subsection{Уравнения движения}
+    \[\frac{d}{dt}\frac{\partial L}{\partial \dot{x}} = \frac{\partial L}{\partial x} \Longrightarrow \ddot{x} = 0\]
+    
+    \[\frac{d}{dt}\frac{\partial L}{\partial \dot{y}} = \frac{\partial L}{\partial y} \Longrightarrow \ddot{y} = 0\]
+    
+    \[\frac{d}{dt}\frac{\partial L}{\partial \dot{z}} = \frac{\partial L}{\partial z}
+    \Longrightarrow \ddot{z} = 0\]
+    
+    \[\frac{d}{dt}\frac{\partial L}{\partial \dot{l}} = \frac{\partial L}{\partial l}
+    \Longrightarrow \ddot{l} = l(\dot{\phi}^2{\cos^2{\psi}} + \dot{\psi}^2 - \frac{k}{\mu}) + \frac{k}{\mu}l_0\]
+    
+ \[\frac{d}{dt}\frac{\partial L}{\partial \dot{\phi}} = \frac{\partial L}{\partial \phi}
+    \Longrightarrow \ddot{\phi} = \frac{2l\dot{\phi}\sin{\psi}\dot{\psi} - 2\dot{\phi}\cos{\psi}\dot{l}}{l\cos{\psi}}\]
+    
+    \[\frac{d}{dt}\frac{\partial L}{\partial \dot{\psi}} = \frac{\partial L}{\partial \psi}
+    \Longrightarrow \ddot{\psi} = \frac{-2\dot{l}\dot{\psi} - l\dot{\phi}^2\cos{\psi}\sin{\psi}}{l}\]
+ \newpage
+\section{Метод численного решения задачи}
+\subsection{Описание метода}
+Для численного решения полученной сиситемы дифференциальных уравниений использовался метод Рунге-Кутты 4-5, с помощью которого можно получить достаточно близкие к реальным значения. Описание метода:
+
+Рассмотрим задачу Коши для системы обыкновенных дифференциальных уравнений первого порядка 
+    \[y\prime  = f(x,y),y(x_0)=y_0.\]
+Тогда приближенное значение в последующих точках вычисляется по итерационной формуле:
+    \[y[n+1] = y[n] + \frac{h}{6}( k_1 + 2 k_2 + 2 k_3 +k_4)\]
+Вычисление нового значения проходит в четыре стадии:
+    \[k_1 = f ( x[n] , y[n] )\]
+    \[k_2 = f ( x [n] + \frac{h}{2} , y[ n] + \frac{h}{2} k_1 ) \]
+    \[k_3 = f ( x [n] +\frac{h}{2} , y[ n] + \frac{h}{2} k_2 ) \]
+    \[k_4 = f ( x [n] + h , y[ n] + h k_3 ) \]
+где $h$ — величина шага сетки по x.
+
+Этот метод имеет четвёртый порядок точности. Это значит, что ошибка на одном шаге имеет порядок $O(h^5)$, а суммарная ошибка на конечном интервале интегрирования имеет порядок $O(h^4)$.
+\newpage
+\subsection{Полученные результаты}
+По итогам моделирования с характерными параметрами, которые приведены в файле "main.json" получены графики:
+ \begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image.png}
+  \caption{фазовый портрет $l$}
+ \end{figure}
+    
+ \begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image copy.png}
+  \caption{эволюция $l$}
+ \end{figure}
+    
+ \begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image copy 2.png}
+  \caption{эволюция $\dot{l}$}
+ \end{figure}
+    
+    \newpage
+    
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image copy 3.png}
+  \caption{эволюция $\phi$}
+ \end{figure}
+
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image copy 4.png}
+  \caption{эволюция $\dot{\phi}$}
+ \end{figure}
+
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image copy 5.png}
+  \caption{эволюция $\psi$}
+ \end{figure}
+
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image copy 6.png}
+  \caption{эволюция $\dot{\psi}$}
+ \end{figure}
+    
+Отличной проверкой точности служит закон сохранения энергии, поскольку на нашу систему не действует внешних сил. В результате из-за погрешности численного метода энергия флуктуирует не больше чем на десятую процента.
+
+    
+ \newpage
+ 
+ \section{Аналитический вывод первых интегралов и уравнения движения}
+    Из первых трех уравнений движения на координаты центра масс выводятся первые три первых интеграла:
+    \[\dot{x} = const\]
+    \[\dot{y} = const\]
+    \[\dot{z} = const\]
+    Запишем выражение для угловой скорости:
+    \[\vec{\Omega} = \begin{pmatrix}
+        \dot{\psi}\sin{\phi}\\
+        -\dot{\psi}\cos{\phi}\\
+        \dot{\phi}
+    \end{pmatrix}\]
+    Запишем выражение для кин. момента:
+    \[\vec{K} = \mu l^2 
+    \begin{pmatrix}
+        \dot{\psi}\sin{\phi} - \dot{\phi}\sin{\psi}\cos{\psi}\cos{\phi}\\
+        \dot{\psi}\cos{\phi} - \dot{\phi}\sin{\psi}\cos{\psi}\sin{\phi}\\
+        \dot{\phi}\cos^2{\psi}
+    \end{pmatrix}
+    \]
+    Так как на систему не действует внешних сил, то в системе отсчета центра масс сохраняется кин. момент. Откуда получаем еще два первых интеграла системы:
+        \[K_z = \mu l^2 \dot{\phi}\cos^2{\psi} = C_1\]
+        \[K_x^2 + K_y^2 = \mu^2 l^4 (\dot{\phi}^2\sin^2{\psi}\cos^2{\psi} + \dot{\psi}^2) = C_2^2\]
+    Поскольку $\dot{\phi}^2{\cos^2{\psi}} + \dot{\psi}^2 = \frac{1}{\mu^2 l^4}(C_1^2 + C_2^2)$,
+    уравнение движения для $l$ можно записать как:
+    \[\ddot{l} + \omega^2 l - \frac{\gamma}{l^3} = \omega^2 l_0\]
+    где $\omega^2 = \frac{k}{\mu}$, $\gamma = \frac{C_1^2 + C_2^2}{\mu^2}$
+    \newpage
+    В случае малого начального закручивания (малые $\gamma$), решение выглядит так:
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.5\textwidth, height = 0.2\textheight]{pictures/analIT_1.jpg}
+  \caption{фазовый портрет}
+ \end{figure}
+    Такому движению соответствует интеграл:
+    \[\dot{l}^2 + \omega^2 l^2 + \frac{\gamma}{l^2} - 2\omega^2 l l_0  = C\]
+    
+    Так же было аналитически выражено и оценено $l_{min}$ - длина пружины при наибольшем сближении при $l_0$ = 0:
+    \[l_{min} = \sqrt{\frac{1}{2w^2}(C - \sqrt{C^2 - 4\omega^2 \gamma})} \approx \sqrt{C\gamma}\]
+    что соответсвует переходу всей энергии в кинетическую энергию вращения(в СО центра масс).
+
+    
+    \newpage
+    
+ \section{Анализ и физический смысл}
+ В нашей работе была рассмотрена свободгная система, движение которой задается нелинейным дифференциальным уравнением, решена численно и проанализирована аналитически. Физсмысл найден, это просто пружинка(хотя постойте, но ведь модель гармонического осцилятора в качестве молекулы, и у нас картины похожие на ЛД потенциал графики...)(расскажем за 4 балл)
+\end{document}

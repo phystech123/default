@@ -1,0 +1,3 @@
+/home/oleg/Рабочий стол/ConAss/build/CMakeFiles/main.dir
+/home/oleg/Рабочий стол/ConAss/build/CMakeFiles/edit_cache.dir
+/home/oleg/Рабочий стол/ConAss/build/CMakeFiles/rebuild_cache.dir

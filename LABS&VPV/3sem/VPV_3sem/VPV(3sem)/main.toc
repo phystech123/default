@@ -1,0 +1,5 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Формулировка проблемы}{3}{section.1}%
+\contentsline {section}{\numberline {2}Необходимая теория}{3}{section.2}%
+\contentsline {section}{\numberline {3}Длинная линия с колебаниями}{4}{section.3}%
+\contentsline {section}{\numberline {4}Анализ и физический смысл}{5}{section.4}%

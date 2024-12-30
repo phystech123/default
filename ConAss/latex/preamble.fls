@@ -1,0 +1,5 @@
+PWD /home/oleg/Рабочий стол/ConAss/latex
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/oleg/Рабочий стол/ConAss/latex/preamble.tex
+OUTPUT preamble.log

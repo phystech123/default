@@ -1,0 +1,42 @@
+{
+    "algo": "RK4",
+
+    "l":100,
+    "l_":0,
+    "phi":0,
+    "phi_":0.1,
+    "psi":1,
+    "psi_":0,
+
+    "x":0,
+    "x_":0,
+    "y":0,
+    "y_":0,
+    "z":0,
+    "z_":0,
+    
+    "h":0.000001,
+    "N":1000000,
+    "k":1000,
+    "m1":1,
+    "m2":1,
+    "m":0.5,
+    "l0":0,
+    "files": [
+    {
+    "l": "datas/data_l.csv", 
+    "l_": "datas/data_l_.csv",
+    "phi": "datas/data_phi.csv",
+    "phi_": "datas/data_phi_.csv",
+    "psi": "datas/data_psi.csv",
+    "psi_": "datas/data_psi_.csv",
+
+    "x": "datas/data_x.csv",
+    "x_": "datas/data_x_.csv",
+    "y": "datas/data_y.csv",
+    "y_": "datas/data_y_.csv",
+    "z": "datas/data_z.csv",
+    "z_": "datas/data_z_.csv"
+    }
+    ]
+}

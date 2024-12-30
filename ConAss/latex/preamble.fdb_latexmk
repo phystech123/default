@@ -1,0 +1,12 @@
+# Fdb version 4
+["pdflatex"] 1734952349.64763 "/home/oleg/Рабочий стол/ConAss/latex/preamble.tex" "preamble.pdf" "preamble" 1734952349.90857 2
+  "/home/oleg/Рабочий стол/ConAss/latex/preamble.tex" 1734952348.83627 885 d23330591c9d6d2daac58514e4f52f2f ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1727349926 41588 b43d3e860a4f94167ee1e725ff526a72 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1734947069 7113015 ab561b0db6ffc14bbe95bc51b43555d9 ""
+  "preamble.aux" 0 -1 0 "pdflatex"
+  "preamble.tex" 1734952348.83627 885 d23330591c9d6d2daac58514e4f52f2f ""
+  (generated)
+  "preamble.aux"
+  "preamble.log"
+  "preamble.pdf"
+  (rewritten before read)

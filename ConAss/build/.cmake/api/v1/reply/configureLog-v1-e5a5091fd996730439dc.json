@@ -1,0 +1,15 @@
+{
+	"eventKindNames" : 
+	[
+		"message-v1",
+		"try_compile-v1",
+		"try_run-v1"
+	],
+	"kind" : "configureLog",
+	"path" : "/home/oleg/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/ConAss/build/CMakeFiles/CMakeConfigureLog.yaml",
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}
