@@ -102,7 +102,9 @@
   \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image.png}
   \caption{фазовый портрет $l$}
  \end{figure}
-    
+    Приведенный выше график, как бы обрезается при приближении в нулю, что значит непересечение шаров.
+
+    Графики ниже показывают периодическое поведение $l$:
  \begin{figure}[H]
   \centering
   \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image copy.png}
@@ -116,11 +118,11 @@
  \end{figure}
     
     \newpage
-    
+    Расположенные ниже графики показывают изменение углов в рассмотренном режиме, изменяются резко в минимуме расстояния.
     \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image copy 3.png}
-  \caption{эволюция $\phi$}
+  \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/image copy 3_.png}
+  \caption{эволюция $\phi$ (каждый поворот меняется ровно на $\pi$)}
  \end{figure}
 
     \begin{figure}[H]
@@ -142,7 +144,66 @@
  \end{figure}
     
 Отличной проверкой точности служит закон сохранения энергии, поскольку на нашу систему не действует внешних сил. В результате из-за погрешности численного метода энергия флуктуирует не больше чем на десятую процента.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.6\textwidth, height = 0.20\textheight]{pictures/data/energy.png}
+    \caption{сохранение энергии(флуктуирует по причине дискретности метода)}
+   \end{figure}
 
+ \newpage
+ \subsection{Анализ полученных результатов на большом интервале времени}
+    Нами были построены еще несколько графиков, которые используются для анализа поведения системы в совокупности.
+    Рассмотрено поведение угла $\psi$ на большом интервале времени.
+    Первый граффик иллюстрирует общее поведение угла $\psi$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/psi_big.jpg}
+        \caption{зависимость $\psi$ от времени}
+       \end{figure}
+    Как видно из данного графика, угол испытывает периодические колебания, амплитуда и частота остаются неизменными на протяжении всего временного участка.
+    
+    Постмотрим на график $\dot{\psi}$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 0.85\textwidth, height = 0.20\textheight]{pictures/data/psi__big.jpg}
+        \caption{зависимость $\psi$ от времени}
+       \end{figure}
+       
+    Можно заметить, что изменение скорости так же имеет периодический характер, частота попрежнему неизменна, однако появляется аплитудная модуляция. Рассмотрим график изменения $psi$ подробнее, на разных временных интервалах.
+    
+    \begin{figure}[H]%
+        \centering
+        \qquad
+        \subfloat[\centering минимум амплитуды скорости]{{\includegraphics[width=15em]{pictures/data/s_min.jpg} }}%
+        \qquad
+        \subfloat[\centering возрастание амплитуды скорости]{{\includegraphics[width=15em]{pictures/data/s_dec.jpg} }}%
+        \newline
+        \centering
+        \subfloat[\centering максимум амплитуды скорости]{{\includegraphics[width=15em]{pictures/data/s_max.jpg} }}%
+        \qquad
+        \subfloat[\centering убывание амплитуды скорости]{{\includegraphics[width=15em]{pictures/data/s_inc.jpg} }}%        
+        \caption{$\psi$ на различных участках}%
+        \label{psi}%
+    \end{figure}
+    Данные графики показывают, что в различные моменты времени, вращение по $\psi$ происходит по разным траекториям.
+    Данный факт хорошо иллюстрирует анимация в координатах $Y-Z$ (\textit{animation.webm})
+    
+    Так же, если посмотреть за траекторией, то можно заметить, что спустя период шары не возвращаются в исходную позицию, что говорит о прецессии орбиты.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 0.4\textwidth, height = 0.20\textheight]{pictures/data/trace.jpg}
+        \caption{зависимость $\psi$ от времени}
+       \end{figure}
+% \newpage
+    
+% \includemedia[
+%     width=0.4\linewidth,
+%     height=0.3\linewidth,
+%     activate=pageopen,
+%     addresource=pictures/data/animation.webm,
+%     flashvars={source=pictures/data/animation.webm}
+%   ]{}{VPlayer.swf}
     
  \newpage
  
@@ -189,6 +250,12 @@
     
     \newpage
     
- \section{Анализ и физический смысл}
- В нашей работе была рассмотрена свободгная система, движение которой задается нелинейным дифференциальным уравнением, решена численно и проанализирована аналитически. Физсмысл найден, это просто пружинка(хотя постойте, но ведь модель гармонического осцилятора в качестве молекулы, и у нас картины похожие на ЛД потенциал графики...)(расскажем за 4 балл)
+ \section{Вывод}
+ В данной работе была рассмотрена свободная система двух связанных пружиной шариков.
+ Основные результаты полученные в результате анализа:
+ \begin{itemize}
+    \item найдены первые интегралы системы
+    \item найдены основные закономерности движения системы
+ \end{itemize}
+ Данная модель может быть обобщена на более широкий класс парных взаимодействий как частный случай, таким образом не лишена практического применения.
 \end{document}

@@ -7,5 +7,6 @@
 \contentsline {section}{\numberline {4}Метод численного решения задачи}{5}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Описание метода}{5}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Полученные результаты}{6}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Аналитический вывод первых интегралов и уравнения движения}{9}{section.5}%
-\contentsline {section}{\numberline {6}Анализ и физический смысл}{11}{section.6}%
+\contentsline {subsection}{\numberline {4.3}Анализ полученных результатов на большом интервале времени}{9}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Аналитический вывод первых интегралов и уравнения движения}{11}{section.5}%
+\contentsline {section}{\numberline {6}Вывод}{13}{section.6}%

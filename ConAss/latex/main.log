@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.12.23)  23 DEC 2024 14:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.12.23)  8 JAN 2025 16:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/oleg/Рабочий стол/ConAss/latex/main.tex"
-(/home/oleg/Рабочий стол/ConAss/latex/main.tex
+**/home/oleg/default/ConAss/latex/main.tex
+(/home/oleg/default/ConAss/latex/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -919,18 +919,42 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count341
 \@lastruleclass=\count342
 \@thisrulewidth=\dimen339
-)) (/usr/share/texmf-dist/tex/latex/float/float.sty
+) (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count343
 \float@exts=\toks63
 \float@box=\box72
 \@float@everytoks=\toks64
 \@floatcapt=\box73
-) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (/usr/share/texmf-dist/tex/latex/media9/media9.sty
+Package: media9 2022/08/04 v1.25 acrobat-9/X compatible media
+\g_mix_pkgresizeflag_int=\count344
+ (/usr/share/texmf-dist/tex/latex/media9/pdfbase.sty
+Package: pdfbase 2022/08/04 v0.55 driver independent access to low-level PDF features
+ (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count344
+\l__color_backend_stack_int=\count345
 \l__pdf_internal_box=\box74
-) (./main.aux)
+)
+\g_pbs_page_int=\count346
+\g_pbs_oc_int=\count347
+) (/usr/share/texmf-dist/tex/latex/ocgx2/ocgbase.sty
+Package: ocgbase 2022/08/04 v0.22 support package for ocgx2.sty
+\g_ocgbase_nd_int=\count348
+)
+\l_mix_poster_box=\box75
+\g_mix_wd_dim=\dimen340
+\g_mix_ht_dim=\dimen341
+\g_mix_dp_dim=\dimen342
+\g_mix_rmcnt_int=\count349
+\l_mix_viewcnt_int=\count350
+\g@mix@page@int=\count351
+\g_mix_resizeflag_int=\count352
+\l_mix_lineno_int=\count353
+\l_mix_pbtn_box=\box76
+\g_mix_mbtncnt_int=\count354
+\mix@btn@dim=\dimen343
+)) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -991,16 +1015,16 @@ LaTeX Info: Redefining \th on input line 5.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count345
-\scratchdimen=\dimen340
-\scratchbox=\box75
-\nofMPsegments=\count346
-\nofMParguments=\count347
+\scratchcounter=\count355
+\scratchdimen=\dimen344
+\scratchbox=\box77
+\nofMPsegments=\count356
+\nofMParguments=\count357
 \everyMPshowfont=\toks65
-\MPscratchCnt=\count348
-\MPscratchDim=\dimen341
-\MPnumerator=\count349
-\makeMPintoPDFobject=\count350
+\MPscratchCnt=\count358
+\MPscratchDim=\dimen345
+\MPnumerator=\count359
+\makeMPintoPDFobject=\count360
 \everyMPtoPDFconversion=\toks66
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1036,7 +1060,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<./pictures/MIPT.png, id=47, 371.3875pt x 250.9375pt>
+<./pictures/MIPT.png, id=51, 371.3875pt x 250.9375pt>
 File: ./pictures/MIPT.png Graphic file (type png)
 <use ./pictures/MIPT.png>
 Package pdftex.def Info: ./pictures/MIPT.png  used on input line 19.
@@ -1048,75 +1072,118 @@ Package pdftex.def Info: ./pictures/MIPT.png  used on input line 19.
 \openout5 = `main.toc'.
 
  [2]
-<pictures/scheme.jpg, id=75, 963.6pt x 1284.8pt>
+<pictures/scheme.jpg, id=82, 963.6pt x 1284.8pt>
 File: pictures/scheme.jpg Graphic file (type jpg)
 <use pictures/scheme.jpg>
 Package pdftex.def Info: pictures/scheme.jpg  used on input line 31.
 (pdftex.def)             Requested size: 963.59766pt x 1284.79688pt.
  [3 <./pictures/scheme.jpg>] [4] [5]
-<pictures/data/image.png, id=109, 593.21625pt x 433.62pt>
+<pictures/data/image.png, id=119, 593.21625pt x 433.62pt>
 File: pictures/data/image.png Graphic file (type png)
 <use pictures/data/image.png>
 Package pdftex.def Info: pictures/data/image.png  used on input line 102.
 (pdftex.def)             Requested size: 411.15715pt x 137.70921pt.
-<pictures/data/image copy.png, id=110, 573.14125pt x 433.62pt>
+<pictures/data/image copy.png, id=120, 573.14125pt x 433.62pt>
 File: pictures/data/image copy.png Graphic file (type png)
 <use pictures/data/image copy.png>
-Package pdftex.def Info: pictures/data/image copy.png  used on input line 108.
+Package pdftex.def Info: pictures/data/image copy.png  used on input line 110.
 (pdftex.def)             Requested size: 411.14842pt x 137.70921pt.
-<pictures/data/image copy 2.png, id=111, 593.21625pt x 433.62pt>
+<pictures/data/image copy 2.png, id=121, 593.21625pt x 433.62pt>
 File: pictures/data/image copy 2.png Graphic file (type png)
 <use pictures/data/image copy 2.png>
-Package pdftex.def Info: pictures/data/image copy 2.png  used on input line 114.
+Package pdftex.def Info: pictures/data/image copy 2.png  used on input line 116.
 (pdftex.def)             Requested size: 411.15715pt x 137.70921pt.
  [6 <./pictures/data/image.png> <./pictures/data/image copy.png> <./pictures/data/image copy 2.png>]
-<pictures/data/image copy 3.png, id=119, 564.1075pt x 433.62pt>
-File: pictures/data/image copy 3.png Graphic file (type png)
-<use pictures/data/image copy 3.png>
-Package pdftex.def Info: pictures/data/image copy 3.png  used on input line 122.
-(pdftex.def)             Requested size: 411.14948pt x 137.70921pt.
-<pictures/data/image copy 4.png, id=120, 591.20876pt x 433.62pt>
+<pictures/data/image copy 3_.png, id=130, 565.11125pt x 433.62pt>
+File: pictures/data/image copy 3_.png Graphic file (type png)
+<use pictures/data/image copy 3_.png>
+Package pdftex.def Info: pictures/data/image copy 3_.png  used on input line 124.
+(pdftex.def)             Requested size: 411.15674pt x 137.70921pt.
+<pictures/data/image copy 4.png, id=131, 591.20876pt x 433.62pt>
 File: pictures/data/image copy 4.png Graphic file (type png)
 <use pictures/data/image copy 4.png>
-Package pdftex.def Info: pictures/data/image copy 4.png  used on input line 128.
+Package pdftex.def Info: pictures/data/image copy 4.png  used on input line 130.
 (pdftex.def)             Requested size: 411.15501pt x 137.70921pt.
-<pictures/data/image copy 5.png, id=121, 589.20125pt x 433.62pt>
+<pictures/data/image copy 5.png, id=132, 589.20125pt x 433.62pt>
 File: pictures/data/image copy 5.png Graphic file (type png)
 <use pictures/data/image copy 5.png>
-Package pdftex.def Info: pictures/data/image copy 5.png  used on input line 134.
+Package pdftex.def Info: pictures/data/image copy 5.png  used on input line 136.
 (pdftex.def)             Requested size: 411.15242pt x 137.70921pt.
-<pictures/data/image copy 6.png, id=122, 602.25pt x 433.62pt>
+<pictures/data/image copy 6.png, id=133, 602.25pt x 433.62pt>
 File: pictures/data/image copy 6.png Graphic file (type png)
 <use pictures/data/image copy 6.png>
-Package pdftex.def Info: pictures/data/image copy 6.png  used on input line 140.
+Package pdftex.def Info: pictures/data/image copy 6.png  used on input line 142.
 (pdftex.def)             Requested size: 411.16032pt x 137.70921pt.
- [7 <./pictures/data/image copy 3.png> <./pictures/data/image copy 4.png> <./pictures/data/image copy 5.png>] [8 <./pictures/data/image copy 6.png>] [9]
-<pictures/analIT_1.jpg, id=141, 722.7pt x 683.55376pt>
+ [7 <./pictures/data/image copy 3_.png> <./pictures/data/image copy 4.png> <./pictures/data/image copy 5.png>]
+<pictures/data/energy.png, id=143, 556.0775pt x 449.68pt>
+File: pictures/data/energy.png Graphic file (type png)
+<use pictures/data/energy.png>
+Package pdftex.def Info: pictures/data/energy.png  used on input line 149.
+(pdftex.def)             Requested size: 290.2226pt x 137.70454pt.
+ [8 <./pictures/data/image copy 6.png> <./pictures/data/energy.png>]
+<pictures/data/psi_big.jpg, id=151, 598.235pt x 433.62pt>
+File: pictures/data/psi_big.jpg Graphic file (type jpg)
+<use pictures/data/psi_big.jpg>
+Package pdftex.def Info: pictures/data/psi_big.jpg  used on input line 160.
+(pdftex.def)             Requested size: 411.14862pt x 137.70921pt.
+<pictures/data/psi__big.jpg, id=152, 567.11874pt x 433.62pt>
+File: pictures/data/psi__big.jpg Graphic file (type jpg)
+<use pictures/data/psi__big.jpg>
+Package pdftex.def Info: pictures/data/psi__big.jpg  used on input line 168.
+(pdftex.def)             Requested size: 411.15488pt x 137.70921pt.
+<pictures/data/s_min.jpg, id=153, 613.29124pt x 433.62pt>
+File: pictures/data/s_min.jpg Graphic file (type jpg)
+<use pictures/data/s_min.jpg>
+Package pdftex.def Info: pictures/data/s_min.jpg  used on input line 177.
+(pdftex.def)             Requested size: 176.20697pt x 124.58208pt.
+<pictures/data/s_dec.jpg, id=154, 613.29124pt x 433.62pt>
+File: pictures/data/s_dec.jpg Graphic file (type jpg)
+<use pictures/data/s_dec.jpg>
+Package pdftex.def Info: pictures/data/s_dec.jpg  used on input line 179.
+(pdftex.def)             Requested size: 176.20697pt x 124.58208pt.
+<pictures/data/s_max.jpg, id=155, 613.29124pt x 433.62pt>
+File: pictures/data/s_max.jpg Graphic file (type jpg)
+<use pictures/data/s_max.jpg>
+Package pdftex.def Info: pictures/data/s_max.jpg  used on input line 182.
+(pdftex.def)             Requested size: 176.20697pt x 124.58208pt.
+<pictures/data/s_inc.jpg, id=156, 613.29124pt x 433.62pt>
+File: pictures/data/s_inc.jpg Graphic file (type jpg)
+<use pictures/data/s_inc.jpg>
+Package pdftex.def Info: pictures/data/s_inc.jpg  used on input line 184.
+(pdftex.def)             Requested size: 176.20697pt x 124.58208pt.
+ [9 <./pictures/data/psi_big.jpg> <./pictures/data/psi__big.jpg>]
+<pictures/data/trace.jpg, id=165, 427.5975pt x 340.27126pt>
+File: pictures/data/trace.jpg Graphic file (type jpg)
+<use pictures/data/trace.jpg>
+Package pdftex.def Info: pictures/data/trace.jpg  used on input line 195.
+(pdftex.def)             Requested size: 193.47408pt x 137.71045pt.
+ [10 <./pictures/data/s_min.jpg> <./pictures/data/s_dec.jpg> <./pictures/data/s_max.jpg> <./pictures/data/s_inc.jpg> <./pictures/data/trace.jpg>] [11]
+<pictures/analIT_1.jpg, id=181, 722.7pt x 683.55376pt>
 File: pictures/analIT_1.jpg Graphic file (type jpg)
 <use pictures/analIT_1.jpg>
-Package pdftex.def Info: pictures/analIT_1.jpg  used on input line 179.
+Package pdftex.def Info: pictures/analIT_1.jpg  used on input line 240.
 (pdftex.def)             Requested size: 241.84409pt x 137.70963pt.
- [10 <./pictures/analIT_1.jpg>] [11] (./main.aux)
+ [12 <./pictures/analIT_1.jpg>] [13{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 96C86C57033FBBC744DC6F874C1808E7;2503.
+(rerunfilecheck)             Checksum: EFB62D6388DF50FEE3C4E2DD888C25A8;2865.
  ) 
 Here is how much of TeX's memory you used:
- 38833 strings out of 475550
- 882617 string characters out of 5785872
+ 39889 strings out of 475550
+ 909392 string characters out of 5785872
  1941187 words of memory out of 5000000
- 60271 multiletter control sequences out of 15000+600000
- 571304 words of font info for 73 fonts, out of 8000000 for 9000
+ 61304 multiletter control sequences out of 15000+600000
+ 573319 words of font info for 76 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 103i,8n,104p,799b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb>
-Output written on main.pdf (11 pages, 1349007 bytes).
+ 103i,8n,104p,781b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on main.pdf (13 pages, 1782296 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 
