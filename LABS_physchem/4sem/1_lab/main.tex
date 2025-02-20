@@ -1,0 +1,129 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{./preamble.tex}
+\begin{document}
+
+\begin{titlepage}
+    \title{}
+    \author{ Рябов Олег Евгеньевич \\
+    Шистко Степан Александрович \\
+    Группа Б04-302}
+    \date{\today}
+    \maketitle
+    \vfill
+    \begin{center}
+        \includegraphics[width=30mm]{/home/oleg/Pictures/MIPT.png}
+    \end{center}
+\end{titlepage}
+
+\setcounter{page}{2}
+\tableofcontents
+
+
+\newpage
+
+
+\section{Введение}
+\large \textbf{\sffamily{Цель работы:}} определить сумарную теплоемкость системы (постоянную калориметрической системы); определить интегральную теплоту растворения неизвестной соли.
+	\par \vspace{0.3 cm}
+	\textbf{{В работе используются:}}
+        \begin{itemize}
+           \item калориметр
+           \item пластиковый стакан на 250 мл
+           \item мерный цилиндр
+           \item мешалка
+           \item термометр
+           \item стакан с точно взвешенной навеской известной соли (KCl)
+           \item стакан с точно взвешенной навеской неизвестной соли
+           \item дистиллированная вода
+        \end{itemize}  
+
+
+\section{Теоретические сведения}
+Интегральная теплота растворения – тепловой эффект, сопровождающий растворение 1 грамма (удельная) или 1 моля (молярная) твердого вещества в воде. \par \vspace{0.3 cm}
+Для нахождения интегральной теплоты растворения воспользуемся методом 
+калориметрии: будем фиксировать изменение температуры
+калориметре при растворении в ней известной соли (KCl) в разных количествах, таким образом определим 
+суммарную теплоемкость калориметрической системы:
+\begin{center}
+\[
+K = Q/\Delta T - c_wm_w
+\]
+\[
+Q = --\Delta H_m \cdot \frac{m(KCl)}{\mu(KCl)}
+\]
+\par \vspace{0.3 cm}
+\end{center}
+Окончательно выражаем интегральную теплоту растворения следующим образом:
+\begin{center}
+\[
+\Delta H_m = - Q_x \cdot \frac{\mu_X}{m_X}
+\]
+\end{center}
+
+
+\section{Экспериментальные данные и обработка}
+Для определения константы калориметра берутся навески KCl весом 2, 4, 6, 8 и 10 грамм.
+Взвески неизвестной соли: 4 и 15 грамм.
+Масса воды всегда примерно равнялась 200 граммам.
+Графики полученных зависимостей температуры от времени:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{./pictures/1.png}
+    \caption{}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{./pictures/2.png}
+    \caption{}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{./pictures/3.png}
+    \caption{}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{./pictures/4.png}
+    \caption{}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{./pictures/5.png}
+    \caption{}
+\end{figure}
+
+Полученная константа калориметра, усредненная по всем 5 опытам получается:
+\[
+K = \Delta Q(KCl)/\Delta T = 0.938кДж
+\]
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{./pictures/u1.png}
+    \caption{}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{./pictures/u2.png}
+    \caption{}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{./pictures/uuu.png}
+    \caption{}
+\end{figure}
+
+\section{Заключение}
+В ходе работы нами были получены величины постоянной калориметра и интегральной теплоты растворения соли X в расчете на единицу массы (удельную). На основании данных справочника из лаборатории также были проведены расчеты, позволяющие предположить возможную соль.
+По результатам вычислений ближе всего к табличным молярным энтальпиям получаются энтальпии в предположении о том, что неизвестная соль
+ -- KI.
+
+\end{document}
