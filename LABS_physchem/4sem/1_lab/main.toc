@@ -2,4 +2,4 @@
 \contentsline {section}{\numberline {1}Введение}{3}{section.1}%
 \contentsline {section}{\numberline {2}Теоретические сведения}{3}{section.2}%
 \contentsline {section}{\numberline {3}Экспериментальные данные и обработка}{4}{section.3}%
-\contentsline {section}{\numberline {4}Заключение}{7}{section.4}%
+\contentsline {section}{\numberline {4}Заключение}{8}{section.4}%
