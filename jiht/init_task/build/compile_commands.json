@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/oleg/default/jiht/init_task/build",
+  "command": "/usr/bin/g++  -std=c++23 -g -o CMakeFiles/main.dir/main.cpp.o -c /home/oleg/default/jiht/init_task/main.cpp",
+  "file": "/home/oleg/default/jiht/init_task/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.o"
+}
+]

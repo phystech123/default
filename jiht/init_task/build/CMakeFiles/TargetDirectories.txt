@@ -1,0 +1,3 @@
+/home/oleg/default/jiht/init_task/build/CMakeFiles/main.dir
+/home/oleg/default/jiht/init_task/build/CMakeFiles/edit_cache.dir
+/home/oleg/default/jiht/init_task/build/CMakeFiles/rebuild_cache.dir
