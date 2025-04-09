@@ -84,20 +84,21 @@ class solver{
     public:
 
     double LENGTH = 1; //length of simulation cell
-    double t = 1e-2; //step value
-    int rep = 10e5; //number of repetitions
+    double t = 1e-4; //step value
+    int rep = 1e5; //number of repetitions
     int N = 3; //number of atoms
     //parameters of L-D potential
-    double eps = 0.01;
-    double sigm = 0.01;
+    double eps = 0.5;
+    double sigm = 0.1;
 
     vector<atom> gas; //array of atoms
     
     solver(){
-        double M=1, R=0.01;
+        double M=1, R=0.001;
         std::uniform_real_distribution<> d1(R, LENGTH-R);
+        std::uniform_real_distribution<> d2(-0.1, 0.1);
         for(int i = 0; i < N; i++){
-            gas.push_back(atom(M, R, d1(e1),d1(e1),d1(e1),d1(e1),d1(e1),d1(e1)));
+            gas.push_back(atom(M, R, d1(e1),d1(e1),d1(e1),d2(e1),d2(e1),d2(e1)));
         }
     };
 
@@ -109,20 +110,38 @@ class solver{
     solver& operator=(solver &&sec)=delete;
     ~solver(){}
 
+    coord cond_check(const coord& c, double R){
+        coord temp(c.a, c.b, c.c);
+        if(c.a + R > LENGTH) temp.a -= LENGTH-2*R;
+        if(c.b + R > LENGTH) temp.b -= LENGTH-2*R;
+        if(c.c + R > LENGTH) temp.c -= LENGTH-2*R;
+        if(c.a - R < 0) temp.a += LENGTH-2*R;
+        if(c.b - R < 0) temp.b += LENGTH-2*R;
+        if(c.c - R < 0) temp.c += LENGTH-2*R;
+        return temp;
+    }
+
     void solve_verle(){
+        // initial conditions
+        for(atom &at: gas){
+            at.coor.push_back(at.coor[0]+at.speed[0]*t);
+        }
+
         for(int i = 2; i < rep; i++){
             for(int j = 0; j < N; j++){
-                atom obj = gas[j];
+                atom &obj = gas[j];
                 coord A = coord(0,0,0);
                 for(int k = 0; k < N; k++){
                     if(k==j) continue;
                     double r = (obj.coor[i-1]-gas[k].coor[i-1])*(obj.coor[i-1]-gas[k].coor[i-1]);
-                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 8))*(obj.coor[i-1]-gas[k].coor[i-1]);
+                    r = std::max(r, 1e-10);
+                    A = A - (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*(obj.coor[i-1]-gas[k].coor[i-1]);
                 }
-                obj.coor.push_back(2*obj.coor[i-1] - obj.coor[i-1] + A*pow(t,2));
+                obj.coor.push_back(cond_check(2*obj.coor[i-1] - obj.coor[i-2] + A*pow(t,2), obj.R));
             }
         }
     }
+    
     void solve_R_K(){
         for(int i = 1; i < rep; i++){
             for(int j = 0; j < N; j++){
@@ -132,7 +151,8 @@ class solver{
                 for(int k = 0; k < N; k++){
                     if(k==j) continue;
                     double r = (obj.coor[i-1]-gas[k].coor[i-1])*(obj.coor[i-1]-gas[k].coor[i-1]);
-                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 8))*(obj.coor[i-1]-gas[k].coor[i-1]);
+                    r = std::max(r, 1e-10);
+                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*(obj.coor[i-1]-gas[k].coor[i-1]);
                 }
                 coord k1_x = obj.speed[i-1];
                 coord k1_v = A;
@@ -141,7 +161,8 @@ class solver{
                 for(int k = 0; k < N; k++){
                     if(k==j) continue;
                     double r = ((obj.coor[i-1] + k1_x*t/2)-gas[k].coor[i-1])*((obj.coor[i-1]+ k1_x*t/2)-gas[k].coor[i-1]);
-                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 8))*((obj.coor[i-1] + k1_x*t/2)-gas[k].coor[i-1]);
+                    r = std::max(r, 1e-10);
+                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*((obj.coor[i-1] + k1_x*t/2)-gas[k].coor[i-1]);
                 }
                 coord k2_x = obj.speed[i-1]+k1_v*t/2;
                 coord k2_v = A;
@@ -150,7 +171,8 @@ class solver{
                 for(int k = 0; k < N; k++){
                     if(k==j) continue;
                     double r = ((obj.coor[i-1] + k2_x*t/2)-gas[k].coor[i-1])*((obj.coor[i-1]+ k2_x*t/2)-gas[k].coor[i-1]);
-                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 8))*((obj.coor[i-1] + k2_x*t/2)-gas[k].coor[i-1]);
+                    r = std::max(r, 1e-10);
+                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*((obj.coor[i-1] + k2_x*t/2)-gas[k].coor[i-1]);
                 }
                 coord k3_x = obj.speed[i-1]+k2_v*t/2;
                 coord k3_v = A;
@@ -160,12 +182,13 @@ class solver{
                 for(int k = 0; k < N; k++){
                     if(k==j) continue;
                     double r = ((obj.coor[i-1] + k3_x*t)-gas[k].coor[i-1])*((obj.coor[i-1]+ k3_x*t)-gas[k].coor[i-1]);
-                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 8))*((obj.coor[i-1] + k3_x*t)-gas[k].coor[i-1]);
+                    r = std::max(r, 1e-10);
+                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*((obj.coor[i-1] + k3_x*t)-gas[k].coor[i-1]);
                 }
                 coord k4_x = obj.speed[i-1]+k3_v*t;
                 coord k4_v = A;
 
-               obj.coor.push_back(obj.coor[i-1] + (t/6)*(k1_x + 2*(k2_x + k3_x) + k4_x));
+               obj.coor.push_back(cond_check(obj.coor[i-1] + (t/6)*(k1_x + 2*(k2_x + k3_x) + k4_x), obj.R));
                obj.speed.push_back(obj.speed[i-1] + (t/6)*(k1_v + 2*(k2_v + k3_v) + k4_v));
 
             }
@@ -176,11 +199,26 @@ class solver{
     void print(std::string file_name, int n=1){
         ofstream file(file_name);
         int it = 0;
-        for(atom at:gas){
+        for(const atom &at:gas){
             file << "Number:" << it << ", mass:" << at.M << ", radius:" << at.R <<"\n";
             file << "time,x,y,z,x_,y_,z_\n";
             for(int i = 0; i < rep; i+=n){
                 file << i*t << ", " << at.coor[i].a << ", " << at.coor[i].b << ", " << at.coor[i].c << ", " << at.speed[i].a << ", " << at.speed[i].b << ", " << at.speed[i].c << "\n";
+            }
+            it++;
+        }
+        file.close();
+        return;
+    }
+
+    void print_v(std::string file_name, int n=1){
+        ofstream file(file_name);
+        int it = 0;
+        for(const atom &at:gas){
+            file << "Number:" << it << ", mass:" << at.M << ", radius:" << at.R <<"\n";
+            file << "time,x,y,z\n";
+            for(int i = 0; i < rep; i+=n){
+                file << i*t << ", " << at.coor[i].a << ", " << at.coor[i].b << ", " << at.coor[i].c << "\n";
             }
             it++;
         }
@@ -194,6 +232,8 @@ class solver{
 
 int main(){
     solver S;
+    // S.solve_verle();
+    // S.print_v("data/verle.csv", 100);
     S.solve_R_K();
     S.print("data/main.csv", 100);
     return 0;
