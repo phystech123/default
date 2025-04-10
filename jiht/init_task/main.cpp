@@ -38,18 +38,18 @@ class coord{
     coord operator-(coord sec){
         return coord(this->a-sec.a, this->b-sec.b, this->c-sec.c);
     }
-    float operator*(coord sec){
+    double operator*(coord sec){
         return this->a*sec.a + this->b*sec.b + this->c*sec.c;
     }
 };
 coord operator*(double t, coord X){
-    return coord(coord(X.a*t, X.b*t, X.c*t));
+    return coord(X.a*t, X.b*t, X.c*t);
 }
 coord operator*(coord X, double t){
-    return coord(coord(X.a*t, X.b*t, X.c*t));
+    return coord(X.a*t, X.b*t, X.c*t);
 }
 coord operator/(coord X, double t){
-    return coord(coord(X.a/t, X.b/t, X.c/t));
+    return coord(X.a/t, X.b/t, X.c/t);
 }
 
 
@@ -84,9 +84,9 @@ class solver{
     public:
 
     double LENGTH = 1; //length of simulation cell
-    double t = 1e-4; //step value
+    double t = 1e-3; //step value
     int rep = 1e5; //number of repetitions
-    int N = 3; //number of atoms
+    int N = 1e1; //number of atoms
     //parameters of L-D potential
     double eps = 0.5;
     double sigm = 0.1;
@@ -94,7 +94,7 @@ class solver{
     vector<atom> gas; //array of atoms
     
     solver(){
-        double M=1, R=0.001;
+        double M=1, R=0.01;
         std::uniform_real_distribution<> d1(R, LENGTH-R);
         std::uniform_real_distribution<> d2(-0.1, 0.1);
         for(int i = 0; i < N; i++){
@@ -110,15 +110,12 @@ class solver{
     solver& operator=(solver &&sec)=delete;
     ~solver(){}
 
+    double mod(double x, double l){
+        double t = fmod(x, l);
+        return (t < 0) ? t + l : t;
+    }
     coord cond_check(const coord& c, double R){
-        coord temp(c.a, c.b, c.c);
-        if(c.a + R > LENGTH) temp.a -= LENGTH-2*R;
-        if(c.b + R > LENGTH) temp.b -= LENGTH-2*R;
-        if(c.c + R > LENGTH) temp.c -= LENGTH-2*R;
-        if(c.a - R < 0) temp.a += LENGTH-2*R;
-        if(c.b - R < 0) temp.b += LENGTH-2*R;
-        if(c.c - R < 0) temp.c += LENGTH-2*R;
-        return temp;
+        return coord(this->mod(c.a-R, LENGTH-2*R) + R, this->mod(c.b-R, LENGTH-2*R) + R, this->mod(c.c-R, LENGTH-2*R) + R);
     }
 
     void solve_verle(){
@@ -135,7 +132,7 @@ class solver{
                     if(k==j) continue;
                     double r = (obj.coor[i-1]-gas[k].coor[i-1])*(obj.coor[i-1]-gas[k].coor[i-1]);
                     r = std::max(r, 1e-10);
-                    A = A - (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*(obj.coor[i-1]-gas[k].coor[i-1]);
+                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 4))*(obj.coor[i-1]-gas[k].coor[i-1]);
                 }
                 obj.coor.push_back(cond_check(2*obj.coor[i-1] - obj.coor[i-2] + A*pow(t,2), obj.R));
             }
@@ -152,7 +149,7 @@ class solver{
                     if(k==j) continue;
                     double r = (obj.coor[i-1]-gas[k].coor[i-1])*(obj.coor[i-1]-gas[k].coor[i-1]);
                     r = std::max(r, 1e-10);
-                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*(obj.coor[i-1]-gas[k].coor[i-1]);
+                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 4))*(obj.coor[i-1]-gas[k].coor[i-1]);
                 }
                 coord k1_x = obj.speed[i-1];
                 coord k1_v = A;
@@ -162,7 +159,7 @@ class solver{
                     if(k==j) continue;
                     double r = ((obj.coor[i-1] + k1_x*t/2)-gas[k].coor[i-1])*((obj.coor[i-1]+ k1_x*t/2)-gas[k].coor[i-1]);
                     r = std::max(r, 1e-10);
-                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*((obj.coor[i-1] + k1_x*t/2)-gas[k].coor[i-1]);
+                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 4))*((obj.coor[i-1] + k1_x*t/2)-gas[k].coor[i-1]);
                 }
                 coord k2_x = obj.speed[i-1]+k1_v*t/2;
                 coord k2_v = A;
@@ -172,7 +169,7 @@ class solver{
                     if(k==j) continue;
                     double r = ((obj.coor[i-1] + k2_x*t/2)-gas[k].coor[i-1])*((obj.coor[i-1]+ k2_x*t/2)-gas[k].coor[i-1]);
                     r = std::max(r, 1e-10);
-                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*((obj.coor[i-1] + k2_x*t/2)-gas[k].coor[i-1]);
+                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 4))*((obj.coor[i-1] + k2_x*t/2)-gas[k].coor[i-1]);
                 }
                 coord k3_x = obj.speed[i-1]+k2_v*t/2;
                 coord k3_v = A;
@@ -183,7 +180,7 @@ class solver{
                     if(k==j) continue;
                     double r = ((obj.coor[i-1] + k3_x*t)-gas[k].coor[i-1])*((obj.coor[i-1]+ k3_x*t)-gas[k].coor[i-1]);
                     r = std::max(r, 1e-10);
-                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) + pow(sigm, 6)/pow(r, 4))*((obj.coor[i-1] + k3_x*t)-gas[k].coor[i-1]);
+                    A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 4))*((obj.coor[i-1] + k3_x*t)-gas[k].coor[i-1]);
                 }
                 coord k4_x = obj.speed[i-1]+k3_v*t;
                 coord k4_v = A;
@@ -225,6 +222,18 @@ class solver{
         file.close();
         return;
     }
+
+    void export_xyz(std::string file_name, int n=1){
+        ofstream file(file_name);
+        for(int i = 0; i < rep; i+=n){
+            file << N << "\nLattice=\"1 0 0 0 1 0 0 0 1\" Properties=species:S:1:pos:R:3:radius:R:1\n";
+            for(int j = 0; j < N; j++){
+                file << j << " " << gas[j].coor[i].a << " " << gas[j].coor[i].b << " " << gas[j].coor[i].c << " " << gas[j].R << "\n";
+            }
+        }
+        file.close();
+        return;
+    }
 };
 
 
@@ -236,5 +245,6 @@ int main(){
     // S.print_v("data/verle.csv", 100);
     S.solve_R_K();
     S.print("data/main.csv", 100);
+    S.export_xyz("data/main.xyz", 100);
     return 0;
 }
