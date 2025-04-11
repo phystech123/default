@@ -110,12 +110,22 @@ class solver{
     solver& operator=(solver &&sec)=delete;
     ~solver(){}
 
-    double mod(double x, double l){
+    inline double mod(double x, double l){
         double t = fmod(x, l);
         return (t < 0) ? t + l : t;
     }
-    coord cond_check(const coord& c, double R){
+    inline coord cond_check(const coord& c, double R){
         return coord(this->mod(c.a-R, LENGTH-2*R) + R, this->mod(c.b-R, LENGTH-2*R) + R, this->mod(c.c-R, LENGTH-2*R) + R);
+    }
+
+    inline double sign(double x){
+        return x < 0 ? -1 : 1;
+    }
+    inline coord min_image(coord r){
+        return coord(abs(r.a)<LENGTH/2 ? r.a : -1*this->sign(r.a)*LENGTH-abs(r.a),
+        abs(r.b)<LENGTH/2 ? r.b : -1*this->sign(r.b)*LENGTH-abs(r.b),
+        abs(r.c)<LENGTH/2 ? r.c : -1*this->sign(r.c)*LENGTH-abs(r.c)
+        );
     }
 
     void solve_verle(){
@@ -147,6 +157,7 @@ class solver{
                 coord A = coord(0,0,0);
                 for(int k = 0; k < N; k++){
                     if(k==j) continue;
+                    coord r_im = this->min_image(obj.coor[i-1]-gas[k].coor[i-1]);
                     double r = (obj.coor[i-1]-gas[k].coor[i-1])*(obj.coor[i-1]-gas[k].coor[i-1]);
                     r = std::max(r, 1e-10);
                     A = A + (24*eps/obj.M)*(2*pow(sigm, 12)/pow(r,7) - pow(sigm, 6)/pow(r, 4))*(obj.coor[i-1]-gas[k].coor[i-1]);
