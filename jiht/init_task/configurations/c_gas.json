@@ -1,0 +1,23 @@
+{
+    "LENGHT": 1e-4,
+    "t": 1e-9,
+    "rep": 1e4,
+    "N": 100,
+    "eps": 1e-21,
+    "sigm": 2.5e-6,
+    "v_med": 1e-1,
+    "manual": 2,
+    "mass": 2.3e-26,
+    "radius": 1e-7,
+    "atoms":[
+        
+    ],
+    "corr_func_on":true,
+    "ways":{
+        "verle":"data/verle.csv",
+        "xyz":"data/main.xyz",
+        "energy":"data/energy.csv",
+        "speeds":"data/speeds.csv",
+        "corr_func":"data/corr_func.csv"
+    }
+}

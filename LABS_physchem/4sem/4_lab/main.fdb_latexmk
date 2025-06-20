@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1743705365.44716 "/home/oleg/default/LABS_physchem/4sem/4_lab/main.tex" "main.pdf" "main" 1743705367.70331 0
+["pdflatex"] 1744990418.92424 "/home/oleg/default/LABS_physchem/4sem/4_lab/main.tex" "main.pdf" "main" 1744990421.76722 0
   "/home/oleg/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1734952816.27977 3308 eee81981029f67083258db36df06e523 ""
   "/home/oleg/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/labx1728.tfm" 1734952623.44645 3312 d199be9bd555944e2403193d58a0256a ""
   "/home/oleg/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/labx2074.tfm" 1739832491.14587 3316 0992aa03d0c75498a0b6fb905d9eaab6 ""
@@ -7,7 +7,7 @@
   "/home/oleg/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm" 1734952619.10311 3256 3daaa33cf35cf3f354983aa3214ecd7f ""
   "/home/oleg/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/larm1728.tfm" 1734952622.05978 3252 92d08740ce00199d6cf9ff4aaada81d1 ""
   "/home/oleg/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/larm2074.tfm" 1734952617.69645 3264 03c2b9e4787a40d3b9c197c38b93b558 ""
-  "/home/oleg/default/LABS_physchem/4sem/4_lab/main.tex" 1743705365.06364 13024 c91742dba40e2e96e95df63ede3a2f47 ""
+  "/home/oleg/default/LABS_physchem/4sem/4_lab/main.tex" 1744990418.26287 12934 a622baa1dd4f796c97b858d016519932 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc" 1742685315 3141 82d5616418ed8d5de703b3951bedecb4 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1742685315 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1742685315 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -204,9 +204,9 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1743353841 2088908 e7f15de9dd9e63de2f35676e2e1fc0cd ""
   "image.png" 1743705170.16449 27507 2065b4777df4752d761507f52c317324 ""
   "image2.png" 1743704534.08728 13518 323fdd38577c4f64ff00d529fd0ceeaf ""
-  "main.aux" 1743705367.48363 2968 52290fae559bb29c62fb51d3e32f80cb "pdflatex"
-  "main.out" 1743705367.48696 936 4cc44ceea6571a0767e6d5d93297ef17 "pdflatex"
-  "main.tex" 1743705365.06364 13024 c91742dba40e2e96e95df63ede3a2f47 ""
+  "main.aux" 1744990421.50953 2968 52290fae559bb29c62fb51d3e32f80cb "pdflatex"
+  "main.out" 1744990421.50953 936 4cc44ceea6571a0767e6d5d93297ef17 "pdflatex"
+  "main.tex" 1744990418.26287 12934 a622baa1dd4f796c97b858d016519932 ""
   (generated)
   "main.aux"
   "main.log"

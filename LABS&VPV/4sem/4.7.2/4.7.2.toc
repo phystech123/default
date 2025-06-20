@@ -1,0 +1,7 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Теоретическая часть}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Интерференционные кольца при прохождении света через одноосный кристалл}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Эффект Поккельса}{2}{}%
+\contentsline {section}{\numberline {2}Измерения}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Интерференционные кольца}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Эффект Поккельса}{3}{}%

@@ -1,0 +1,12 @@
+{
+    "LENGHT": 1.3e-5,
+    "t": 1e-13,
+    "rep": 1e5,
+    "N": 100,
+    "eps": 1e-20,
+    "sigm": 2.5e-6,
+    "v_med": 1e-5,
+    "manual": 2,
+    "mass": 2.3e-26,
+    "radius": 1e-7
+}

@@ -1,0 +1,10 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}\LARGE \textbf {Теоретические сведения}}{2}{}%
+\contentsline {subsection}{\numberline {1.1}\large {Изотерма Ленгмюра}}{2}{}%
+\contentsline {subsection}{\numberline {1.2}\large {Изотерма Генри}}{4}{}%
+\contentsline {subsection}{\numberline {1.3}\large {Изотерма Фрейндлиха}}{4}{}%
+\contentsline {subsection}{\numberline {1.4}\large {Закон Бугера -- Ламберта -- Бера}}{4}{}%
+\contentsline {section}{\numberline {2}\LARGE Ход Работы}{6}{}%
+\contentsline {section}{\numberline {3}\LARGE \textbf {Экспериментальные данные}}{6}{}%
+\contentsline {section}{\numberline {4}\LARGE \textbf {Обработка результатов}}{9}{}%
+\contentsline {section}{\numberline {5}\LARGE \textbf {Заключение}}{12}{}%

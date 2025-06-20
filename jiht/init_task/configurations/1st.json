@@ -1,0 +1,15 @@
+{
+    "LENGHT":1,
+    "t":1e-5,
+    "rep":1e4,
+    "N":300,
+    "eps":0.05,
+    "sigm":0.01,
+    "v_med":10,
+    "manual":2,
+    "mass":1,
+    "radius":0.005,
+    "atoms":[
+        
+    ]
+}

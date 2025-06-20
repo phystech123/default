@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/oleg/Desktop/yandex_backend/4task/build",
+  "command": "/usr/bin/g++  -std=c++23 -g -fPIE -o CMakeFiles/main.dir/main.cpp.o -c /home/oleg/Desktop/yandex_backend/4task/main.cpp",
+  "file": "/home/oleg/Desktop/yandex_backend/4task/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.o"
+}
+]

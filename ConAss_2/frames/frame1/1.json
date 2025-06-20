@@ -1,0 +1,33 @@
+{
+    "params_model":{
+        "algo": "RK4",
+        "h":0.000001,
+        "rep":100000000,
+        "skip":100000,
+        "files":{
+            "phi":"data/data_phi.csv",
+            "phi_":"data/data_phi_.csv",
+            "theta":"data/data_theta.csv",
+            "theta_":"data/data_theta_.csv"
+        }
+    },
+    "params_sys":{
+        "g":9.81,
+        "l":1,
+        "m":1,
+
+        "alpha_1":1,
+        "alpha_2":1,
+
+        "x_0":0.2,
+        "y_0":0,
+        "z_0":1.1
+    },
+    "init_cond":{
+        "phi":0.1,
+        "phi_":0.1,
+        "theta":0.1,
+        "theta_":0.1
+    }
+
+}

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/oleg/default/jiht/init_task/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

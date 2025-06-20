@@ -1,0 +1,3 @@
+/home/oleg/Desktop/yandex_backend/3task/build/CMakeFiles/main.dir
+/home/oleg/Desktop/yandex_backend/3task/build/CMakeFiles/edit_cache.dir
+/home/oleg/Desktop/yandex_backend/3task/build/CMakeFiles/rebuild_cache.dir
