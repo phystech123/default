@@ -1,6 +1,6 @@
 {
     "params_model":{
-        "algo": "RK4_with_diss",
+        "algo": "RK4_for_biff",
         "h":0.001,
         "rep":200000,
         "skip":100000,

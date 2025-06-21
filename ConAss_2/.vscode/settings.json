@@ -58,5 +58,11 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "phpcs.enable": true,
   "phpcs.standard": "PSR12",
-  "phpcs.executablePath": "/home/oleg/.config/composer/vendor/bin/phpcs"
+  "phpcs.executablePath": "/home/oleg/.config/composer/vendor/bin/phpcs",
+  "jupyter.enabled": true,
+  "jupyter.useNotebookEditor": true,
+  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
+  "jupyter.runStartupCommands": [
+     "%matplotlib widget"
+  ]
 }
