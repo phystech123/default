@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/oleg/default/ConAss_2/build",
+  "command": "/usr/bin/g++ -g -o CMakeFiles/main.dir/main.cpp.o -c /home/oleg/default/ConAss_2/main.cpp",
+  "file": "/home/oleg/default/ConAss_2/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.o"
+}
+]
